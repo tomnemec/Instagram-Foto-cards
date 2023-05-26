@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+}
+h1 {
+  position: fixed;
+  top: 200px;
+  font-size: 5rem;
+}
+main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background-color: #ffdee9;
+  background-image: linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%);
+}
+.card-row {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+.card {
+  width: 400px;
+  height: 400px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+  }
+}
+.card > h2,
+p {
+  display: none;
+}
+.card > p {
+  display: none;
+}
+.card:hover {
+  cursor: pointer;
+  animation: choose 2s ease-in forwards;
+  > img {
+    z-index: 1;
+    filter: blur(2px);
+  }
+}
+.card:hover > h2,
+p {
+  position: relative;
+  color: white;
+  top: -150px;
+  left: 15px;
+  display: block;
+}
+.card:hover > p {
+  position: relative;
+  color: white;
+  top: -150px;
+  left: 15px;
+  display: block;
+}
+@keyframes choose {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+    margin: 50px;
+  }
+}
